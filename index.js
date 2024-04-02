@@ -24,6 +24,8 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const register = require('./model/register')
 
+const post = require('./posts').posts;
+
 
 
 //creating express instance 
@@ -44,11 +46,13 @@ app.get('/about',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-    let post = [
-        {Username : "JohnDoe",
-    Location: "Los Angeles, CA",Time: "1 hour ago",Text:"This is a post by John Doe"}
-    ]
+    // let post = [
+    // {Username : "Sandeep",
+    // Location: "Pimpri, Maharastra",Time: "14 mins ago",Text:"There is a huge road block on the national highway in front of wadia hospital. It is caused by an accident and needs immediate attention"}
+
+    // ]
     // res.sendFile(path.join(__dirname,'./Public/home.html'))
+    
     res.render('home',{post:post});
 
 
